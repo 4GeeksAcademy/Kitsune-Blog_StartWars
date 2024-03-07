@@ -12,6 +12,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
+			],
+			startships: [
+				{
+					model: "DS-1 Orbital Battle Station",
+					starship_class: "Deep Space Mobile Battlestation",
+					manufacturer: "Imperial Department of Military Research, Sienar Fleet Systems",
+					name: "Death Star"
+				}
 			]
 		},
 		actions: {
@@ -37,7 +45,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			loadStartships: () => {
+				console.log("Se cargó desde flux")
+				fetch ("https://www.swapi.tech/api/starships/") 
+				.then((response)=> response.json()) 
+				.then((data)=>setStore({ startships: data.results }));
+			},
 		}
 	};
 };
