@@ -10,6 +10,10 @@ import HomeStartWars from "./views/HomeStartWars"
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { StarshipInfo } from "./component/StarshipInfo";
+import { VehiclesInfo } from "./component/VehiclesInfo";
+// import { PlanetsInfo } from "./component/PlanetsInfo";
+// import { PeopleInfo } from "./component/PeopleInfo";
 
 //create your first component
 const Layout = () => {
@@ -17,7 +21,7 @@ const Layout = () => {
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
 
-	return (
+	return (    
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
@@ -27,8 +31,13 @@ const Layout = () => {
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
+
+						<Route path="/starshipsInfo/:starshipsId" element={<StarshipInfo />} />
+						<Route path="/vehiclesInfo/:vehiclesId" element={<VehiclesInfo />} />
+						{/* <Route path="/peopleInfo/:peopleId" element={<PeopleInfo />} />
+						<Route path="/planetsInfo/:planetsId" element={<PlanetsInfo />} /> */}
 					</Routes>
-					<Footer />
+					<Footer />   
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
