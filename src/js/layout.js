@@ -10,10 +10,10 @@ import HomeStartWars from "./views/HomeStartWars"
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { StarshipInfo } from "./component/StarshipInfo";
+
 import { VehiclesInfo } from "./component/VehiclesInfo";
-// import { PlanetsInfo } from "./component/PlanetsInfo";
-// import { PeopleInfo } from "./component/PeopleInfo";
+import { PlanetsInfo } from "./component/PlanetsInfo";
+import { PeopleInfo } from "./component/PeopleInfo";
 
 //create your first component
 const Layout = () => {
@@ -32,10 +32,10 @@ const Layout = () => {
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 
-						<Route path="/starshipsInfo/:starshipsId" element={<StarshipInfo />} />
+					
 						<Route path="/vehiclesInfo/:vehiclesId" element={<VehiclesInfo />} />
-						{/* <Route path="/peopleInfo/:peopleId" element={<PeopleInfo />} />
-						<Route path="/planetsInfo/:planetsId" element={<PlanetsInfo />} /> */}
+						<Route path="/peopleInfo/:peopleId" element={<PeopleInfo />} />
+						<Route path="/planetsInfo/:planetsId" element={<PlanetsInfo />} />
 					</Routes>
 					<Footer />   
 				</ScrollToTop>
